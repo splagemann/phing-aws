@@ -43,7 +43,7 @@ class S3PutTask extends Amazon
     public function main()
     {
         parent::main();
-        $client = $this->getAwsClient()->get('s3');
+        $client = $this->getAwsClient()->createS3();
         $client->putObject(array(
             'Bucket'       => $this->getBucket(),
             'Key'          => $this->getObject(),
